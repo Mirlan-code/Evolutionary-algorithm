@@ -7,7 +7,7 @@ from PIL import Image
 block_size = 16
 n = int(512 / block_size)
 population = 10
-image = Image.open('kek.jpg')
+image = Image.open('input.jpg')
 input_image = numpy.array(image)
 current_generation = numpy.zeros([n, n, population, block_size, block_size, 3])
 avg = [0, 0, 0]
@@ -192,7 +192,7 @@ def update_rect(block_row, block_col, x1, y1, x2, y2):
 
 gen = 0
 
-generations_rect = 0
+generations_rect = 20
 
 # blocks generation to the ideal image update_rect
 for index in numpy.ndindex(n, n):
@@ -206,7 +206,7 @@ for index in numpy.ndindex(n, n):
             break
 
 generations = 2000
-generations_rect = 2
+generations_rect = 0
 
 # random rectangle to the ideal image update_rect
 for index in numpy.ndindex(generations):
@@ -229,7 +229,7 @@ for index in numpy.ndindex(generations):
         if update_rect(block_row, block_col, x1, y1, x2, y2) == False:
             break
 
-generations_rect = 1
+generations_rect = 0
 # similar update
 for block_row in range(n):
     for block_col in range(n):
