@@ -192,7 +192,7 @@ def update_rect(block_row, block_col, x1, y1, x2, y2):
 
 gen = 0
 
-generations_rect = 20
+generations_rect = 4
 
 # blocks generation to the ideal image update_rect
 for index in numpy.ndindex(n, n):
